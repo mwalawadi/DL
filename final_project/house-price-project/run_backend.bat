@@ -5,6 +5,13 @@ echo Starting FastAPI Backend Server on port 8000...
 echo ===================================================
 cd /d "%~dp0backend"
 
+if not exist ".env" (
+    if exist ".env.example" (
+        echo Creating backend\.env from .env.example...
+        copy ".env.example" ".env" >nul
+    )
+)
+
 if exist "..\.venv\Scripts\activate.bat" (
     call "..\.venv\Scripts\activate.bat"
 ) else (
