@@ -1,14 +1,22 @@
 /**
  * API client for the House Price Prediction backend.
  *
- * The base URL is read from the VITE_API_BASE_URL environment variable so
- * that no API URL is ever hard-coded inside the React components.
+ * The base URL is read from the VITE_API_BASE_URL environment variable.
+ * Copy frontend/.env.example → frontend/.env and set VITE_API_BASE_URL
+ * before running `npm run dev`.
  */
 
 import axios from 'axios';
 import type { PredictionRequest, PredictionResponse } from '../types/prediction';
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:8000';
+const BASE_URL: string = import.meta.env.VITE_API_BASE_URL;
+
+if (!BASE_URL) {
+  throw new Error(
+    '[predictionClient] VITE_API_BASE_URL is not set. ' +
+    'Copy frontend/.env.example to frontend/.env and set the variable.'
+  );
+}
 
 const api = axios.create({
   baseURL: BASE_URL,

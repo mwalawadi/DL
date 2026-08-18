@@ -55,8 +55,14 @@ const PredictionForm: React.FC = () => {
       .then((r) => r.json())
       .then((data: string[]) => setLocations(data))
       .catch(() => {
-        // Fallback: fetch from the backend's static file if the frontend doesn't serve it
-        fetch(`${import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:8000'}/locations.json`)
+        // Fallback: fetch from the backend if the frontend doesn't serve it.
+        // Uses VITE_API_BASE_URL — no hardcoded URL.
+        const apiBase = import.meta.env.VITE_API_BASE_URL;
+        if (!apiBase) {
+          setLocations(['Other']);
+          return;
+        }
+        fetch(`${apiBase}/locations.json`)
           .then((r) => r.json())
           .then((data: string[]) => setLocations(data))
           .catch(() => setLocations(['Other']));
