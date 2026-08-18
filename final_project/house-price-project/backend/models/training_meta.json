@@ -1,0 +1,59 @@
+{
+  "best_model": "LightGBM",
+  "log_transform_target": true,
+  "numeric_features": [
+    "carpet_area_sqft",
+    "floor_num",
+    "bathroom",
+    "balcony",
+    "bhk"
+  ],
+  "categorical_features": [
+    "location_grouped",
+    "Furnishing",
+    "Transaction",
+    "Ownership",
+    "facing"
+  ],
+  "metrics": {
+    "Linear Regression": {
+      "MAE": 3673139.048278443,
+      "RMSE": 7203461.596442987,
+      "R²": 0.4940411528648665
+    },
+    "Random Forest": {
+      "MAE": 1613230.5171250096,
+      "RMSE": 3971230.867648085,
+      "R²": 0.8462259774947916
+    },
+    "Gradient Boosting": {
+      "MAE": 1989689.8886023934,
+      "RMSE": 4076925.871867535,
+      "R²": 0.83793160395278
+    },
+    "XGBoost": {
+      "MAE": 1607598.800077906,
+      "RMSE": 3732157.7672780734,
+      "R²": 0.8641834506606385
+    },
+    "LightGBM": {
+      "MAE": 1479466.881888555,
+      "RMSE": 3636035.4914230257,
+      "R²": 0.8710893104606493
+    }
+  },
+  "cross_validation": {
+    "model": "LightGBM",
+    "folds": 5,
+    "scoring": "r2 (log-space)",
+    "scores": [
+      0.9007,
+      0.8979,
+      0.9037,
+      0.8983,
+      0.9017
+    ],
+    "mean_r2": 0.9004399522690136,
+    "std_r2": 0.0021469356237485485
+  }
+}

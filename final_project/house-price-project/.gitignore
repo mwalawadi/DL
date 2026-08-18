@@ -1,0 +1,49 @@
+# ─── Python ───────────────────────────────────────────────────────────────────
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.egg
+*.whl
+pip-log.txt
+pip-delete-this-directory.txt
+# ─── Jupyter ──────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+.virtual_documents/
+Untitled.ipynb
+# ─── Environment variables ────────────────────────────────────────────────────
+.env
+*.env.local
+
+# ─── Dataset (do NOT commit raw CSV) ─────────────────────────────────────────
+notebooks/data/*.csv
+notebooks/data/*.xlsx
+
+# ─── Logs ────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ─── Node / Frontend ─────────────────────────────────────────────────────────
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# ─── OS ──────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── IDE ─────────────────────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+
+# ─── Coverage / testing ──────────────────────────────────────────────────────
+.coverage
+htmlcov/
+.pytest_cache/
