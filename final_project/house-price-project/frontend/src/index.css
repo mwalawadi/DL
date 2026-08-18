@@ -247,6 +247,22 @@ body {
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   padding-right: 2.25rem;
+  color-scheme: dark;
+}
+
+/* ─── Select Option Dropdown Theming ────────────────────────────────────── */
+.form-select option {
+  background-color: #1a1d2e;
+  color: #f1f5f9;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.form-select option:hover,
+.form-select option:focus,
+.form-select option:checked {
+  background-color: #6366f1;
+  color: #ffffff;
 }
 
 .form-input:hover,
